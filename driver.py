@@ -185,6 +185,24 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def individual_trip_stats(df):
+    """Displays statistics on bikeshare individual trips."""
+
+    response = input('\nWould you like to raw, individual trip data? Type \'yes\' or \'no\'.\n')
+    if response.lower() == 'yes':
+        
+        # Print 5 lines of raw data
+        for index, row in df.iterrows():
+            print(row, '\n\n')
+
+            if index % 5 == 0 and index != 0:
+
+                print_more = input('\nWould you like to see more rows.\n')
+                
+                if print_more.lower() != 'yes':
+                    break
+                print('-'*40)
+
 def printBannerMessage():
     with open('resources/ascii_art.txt', 'r') as f:
         for line in f:
@@ -202,6 +220,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+        individual_trip_stats(df)
 
         restart = input('\nWould you like to restart? Enter yes or any other characters to quit.\n')
         if restart.lower() != 'yes':
