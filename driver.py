@@ -188,7 +188,7 @@ def user_stats(df):
 def individual_trip_stats(df):
     """Displays statistics on bikeshare individual trips."""
 
-    response = input('\nWould you like to raw, individual trip data? Type \'yes\' or \'no\'.\n')
+    response = input('\nWould you like to view raw, individual trip data? Type \'yes\' or \'no\'.\n')
     if response.lower() == 'yes':
         
         # Print 5 lines of raw data
@@ -197,7 +197,7 @@ def individual_trip_stats(df):
 
             if index % 5 == 0 and index != 0:
 
-                print_more = input('\nWould you like to see more rows.\n')
+                print_more = input('\nWould you like to see more rows? Type \'yes\' or \'no\'.\n')
                 
                 if print_more.lower() != 'yes':
                     break
